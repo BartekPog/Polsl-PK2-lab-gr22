@@ -1,0 +1,38 @@
+Grzegorz Wojciech Kwiatkowski
+
+dodatkowe:
+    obrót bitowy
+
+
+
+Projekt:
+    Edytor stron www
+    Analiza wydźwięku
+    Minifikacja js
+    Gra w szachy
+    statystyki rekreacyjne??
+
+
+
+    EKSTAKCJA SŁÓW KLUCZOWYCH! w C po angielsku
+        API NEWS
+            ((curl))
+        za pomocą TFIDF
+
+
+
+        Prosty problem ngramy 
+
+        z pliku wyliczenie tfidf i ngramy i keywordsy
+
+
+        Anotacja danych?
+            Wydobycie z tekstu synonimów bliskoznacznych, hiperonimów itp
+            Natural Language Processing
+
+
+            słownik: pozytywny, negatywny, neutralny
+                emocje: smutek, agresja, radość
+
+                zdania i słowa: angielsi gotowiec english sentiment 
+                                wordnet, reddit
