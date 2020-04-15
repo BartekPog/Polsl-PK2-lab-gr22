@@ -1,0 +1,79 @@
+78 102
+Cantor set
+Liczby Armstronga
+Problem Collatza
+Wypisywanie n wyrazów Ciągu Fibonacciego
+Suma ciągu arytmetycznego
+Konwersja  liczby na system  dwójkowy
+Konwersja na system trójkowy
+Potęgowanie przy pomocy pętli (potęga całkowita dodatnia)
+Potęga ujemna w pętli (potęga całkowita ujemna)
+Wyliczanie liczby PI metodą Monte Carlo
+Całkowanie metodą prostokątów
+Silnia iteracyjnie
+Wyświetlanie tabliczki mnożenia 10x10
+Szukanie miejsc zerowych metodą bisekcji
+Pierwszy unikalny znak w łańcuchu
+Obliczanie miejsc zerowych równania kwadratowego zadanego współczynnikami a, b,c
+Obliczanie godziny pomiędzy zadanymi strefami czasowymi
+Rysowanie choinki
+Wydawanie reszty
+Trójki pitagorejskie
+Czy rok jest przestępny
+jednostki   fizyczne  konwersja
+ile miesiąc ma dni 
+liczba rzymska na arabski odpowiednik  uwzględnimy zero   
+Wyliczenie indeksu BMI   
+B1
+Ekstrakcja daty urodzenia z numeru PESEL
+Walidator numeru PESEL
+Uporządkować  słowa  po liczbie  wystąpień  danej litery
+Konwersja na  System Fibonacciego  
+Szukanie maksimum w tablicy
+Średnia z elementów tablicy
+Szukanie minimum  w tablicy
+Kopiowanie łańcucha
+Suma elementów w tablicy
+Liczba jedynek w tablicy
+Szukanie numeru telefonu w tekście (9 cyfrowy ciąg cyfr)
+Fizz Buzz wszystkie warianty
+Wyświetlanie Trójkąta Pascaa
+Szyfr Cezara
+Szukanie wielokrotności 2 w tablicy
+Konwersja tablicy wartości z metrów na stopy
+Suma pierwszych n elementów z większej tablicy
+Odejmowanie dwóch tablic zawierających liczby całkowite
+Zamiana cyfr na odpowiednie słowa w języku angielskim
+Dopasowanie dwóch tablic – liczba pasujących elementów na tych samych pozycjach
+Zmiana jednostki w tablicy godziny na sekundy
+Średnia arytmetyczna i średnia harmoniczna z tablicy  
+Konwersja liczby na system binarny
+B 2
+Konwersja liczby na system szesnastkowy
+Konwersja jednostek temperatury Celsiusza na Kelwina
+Konwersja jednostek temperatury Fahrenheita na Celsiusza
+Dodawanie dużych liczb
+Średnia harmoniczna z tablicy
+Longest Zig-Zag Subsequence
+Zaliczenie  liczby wystąpień  liter
+wyszukaj tekst w tablicy łańcuchów 
+Suma liczb z wyjątkiem   liczb x y z
+Wyszukanie powtórzeń w tablicy i liczenie odległości między nimi
+ Trójkowy system liczbowy
+ Kolejne liczby kwadratowe
+ Liczba trójkątna
+Numer ISBN  sumy kontrolne
+Szyfr becona
+Międzynarodowy   numer bankowy
+Walidacja  kodu pocztowego w Polsce
+Liczby zaprzyjaźnione 
+Catalan number
+Sortowanie przez zliczanie
+Sortowanie kubełkowe
+ Sortowanie Leksykograficzne
+ Kolejne liczby kwadratowe
+Znaki wiedzminskie
+Szyfr viginier
+Liczba obfita
+Longest Zig-Zag Subsequence
+ROT13
