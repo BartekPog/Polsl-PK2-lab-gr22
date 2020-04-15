@@ -3,7 +3,8 @@
 #ifndef TEXT_MANIP
 #define TEXT_MANIP
 
-#include "structures.h"
+#include "document.h"
+#include "text.h"
 #include "libs/stmr.h"
 #include <string.h>
 

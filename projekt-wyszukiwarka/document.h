@@ -4,13 +4,15 @@
 #define DOCUMENT
 
 #include <stdio.h>
+#include <stdlib.h>
 
 /** Structure containing a single document*/
 struct document
 {
     char *header;    ///< header of the document
     fpos_t startPos; ///< Position of the beginning of the article in file
-    fpos_t endPos;   ///< Position of the first character after article
+    int lenght;      ///< Lenght of the document
+    // fpos_t endPos;   ///< Position of the first character after article
     // int grams;       ///< Total number of grams
 };
 

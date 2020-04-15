@@ -12,13 +12,13 @@ __ : main
 	./main   
 	            
 	            
-main : main.o libs/stmr.o #structures.o textManip.o
+main : main.o libs/stmr.o document.o textManip.o
 	$(kompilator) $(standard) $(debug) $(optymalizacja) $(errors) -o $@ $^ 		            
 	            
 main.o : main.c
 	$(kompilator) $(standard) $(debug) $(optymalizacja) $(errors) -c -o $@ $^ 
 
-structures.o : structures.c
+structures.o : document.c
 	$(kompilator) $(standard) $(debug) $(optymalizacja) $(errors) -c -o $@ $^ 
 
 textManip.o : textManip.c
