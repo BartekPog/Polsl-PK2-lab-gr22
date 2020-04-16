@@ -1,0 +1,18 @@
+{
+	"columnNumber": 2,
+	"rowNumber": 4,
+	"columns": [
+		{
+			"Name": "n1",
+			"isFloatingPoint": true,
+			"MinValue": 3.000000,
+			"MaxValue": 4.000000
+		},
+		{
+			"Name": "n5",
+			"isFloatingPoint": true,
+			"MinValue": 7.000000,
+			"MaxValue": 8.000000
+		}
+	]
+}
