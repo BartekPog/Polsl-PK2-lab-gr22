@@ -1,18 +1,18 @@
 {
 	"columnNumber": 2,
-	"rowNumber": 4,
+	"rowNumber": 500,
 	"columns": [
 		{
-			"Name": "n1",
+			"Name": "Nazwa1",
 			"isFloatingPoint": true,
-			"MinValue": 3.000000,
-			"MaxValue": 4.000000
+			"MinValue": -10.000000,
+			"MaxValue": 100.000000
 		},
 		{
-			"Name": "n5",
-			"isFloatingPoint": true,
-			"MinValue": 7.000000,
-			"MaxValue": 8.000000
+			"Name": "Nazwa2",
+			"isFloatingPoint": false,
+			"MinValue": -20.000000,
+			"MaxValue": 40.000000
 		}
 	]
 }

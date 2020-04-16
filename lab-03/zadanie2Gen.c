@@ -2,10 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <math.h>
 
 #define PROPERTIES_BINARY_NAME "properties.dat"
 #define PROPERTIES_JSON_NAME "properties.json"
 #define OUTPUT_NAME "output.csv"
+#define PRECISION 10000.0
 
 struct col
 {
@@ -114,7 +116,31 @@ int generateCsv(int rowNum, int colNum, struct col *columns, char *fileName)
     for (int i = 1; i < colNum; i++)
         fprintf(csv, ", %s", columns[i].name);
 
-    ///TODO
+    fprintf(csv, "\n");
+
+    srand(time(NULL));
+
+    for (int row = 0; row < rowNum; row++)
+    {
+        for (int col = 0; col < colNum; col++)
+        {
+            double value = (rand() % (int)((PRECISION) * (columns[col].max - columns[col].min))) / PRECISION + columns[col].min;
+            if (columns[col].isFloat)
+            {
+                fprintf(csv, "%lf", value);
+            }
+            else
+            {
+                int rounded = (int)(value + 0.5);
+                fprintf(csv, "%d", rounded);
+            }
+            if (col != colNum - 1)
+                fprintf(csv, ",");
+        }
+        fprintf(csv, "\n");
+    }
+
+    fclose(csv);
 }
 
 int main(int argc, char *argv[])
@@ -162,6 +188,12 @@ int main(int argc, char *argv[])
         printf("Succesfully saved props binary to: %s\n", PROPERTIES_JSON_NAME);
     else
         printf("Error occured when saving properties to json file\n");
+
+    if (!generateCsv(rowNum, colNum, columns, OUTPUT_NAME))
+        printf("Succesfully generated csv to: %s\n", OUTPUT_NAME);
+    else
+        printf("Error occured when generating file\n");
+
     ///////////////
 
     free(columns);
