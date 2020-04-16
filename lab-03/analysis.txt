@@ -1,0 +1,18 @@
+       Column: liczba_jednostek
+minimum value: 13.000000
+maximum value: 998.000000
+   mean value: 489.136993
+ median value: 461.000000
+
+       Column:  oplaty
+minimum value: 507.016602
+maximum value: 4981.762695
+   mean value: 2672.745117
+ median value: 2606.071777
+
+       Column:  koszt
+minimum value: 19.143999
+maximum value: 4485.996094
+   mean value: 2261.382568
+ median value: 2263.695801
+

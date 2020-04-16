@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include <string.h>
+#include <time.h>
 #include <math.h>
 
 #define PROPERTIES_BINARY_NAME "properties.dat"
@@ -114,7 +114,7 @@ int generateCsv(int rowNum, int colNum, struct col *columns, char *fileName)
 
     fprintf(csv, "%s", columns[0].name);
     for (int i = 1; i < colNum; i++)
-        fprintf(csv, ", %s", columns[i].name);
+        fprintf(csv, ",%s", columns[i].name);
 
     fprintf(csv, "\n");
 

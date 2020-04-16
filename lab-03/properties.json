@@ -1,18 +1,24 @@
 {
-	"columnNumber": 2,
-	"rowNumber": 500,
+	"columnNumber": 3,
+	"rowNumber": 365,
 	"columns": [
 		{
-			"Name": "Nazwa1",
-			"isFloatingPoint": true,
-			"MinValue": -10.000000,
-			"MaxValue": 100.000000
+			"Name": "liczba_jednostek",
+			"isFloatingPoint": false,
+			"MinValue": 1.000000,
+			"MaxValue": 1000.000000
 		},
 		{
-			"Name": "Nazwa2",
-			"isFloatingPoint": false,
-			"MinValue": -20.000000,
-			"MaxValue": 40.000000
+			"Name": "oplaty",
+			"isFloatingPoint": true,
+			"MinValue": 500.000000,
+			"MaxValue": 5000.000000
+		},
+		{
+			"Name": "koszt",
+			"isFloatingPoint": true,
+			"MinValue": 15.000000,
+			"MaxValue": 4500.000000
 		}
 	]
 }
