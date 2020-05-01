@@ -31,9 +31,9 @@ int main()
 
     //TESTING
     struct docArray *docs = createDocArrayFromFile(fileStream);
+    printf("Found %d documents\n", docs->size);
 
     printDocument(fileStream, docs->documentPointers[0]);
-    return 0;
 
     deleteDocArray(docs);
 

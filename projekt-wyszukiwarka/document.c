@@ -9,7 +9,6 @@ struct docArray *createDocArrayFromFile(FILE *fileStream)
     int numberOfElements;
 
     struct docLinkedListElem *docListHead = createDocListFromFile(fileStream, &numberOfElements);
-    printf("Found %d documents\n", numberOfElements);
 
     struct docArray *documents = malloc(sizeof(struct docArray));
 
@@ -89,17 +88,21 @@ void addDocToDocListHead(struct docLinkedListElem **pHeadPointer, struct documen
 
 void deleteDocArray(struct docArray *array)
 {
+    if (array == NULL)
+        return;
     for (int i = 0; i < array->size; i++)
     {
         free(array->documentPointers[i]->header);
         free(array->documentPointers[i]);
+        array->documentPointers[i] = NULL;
     }
     free(array);
+    array = NULL;
+    return;
 }
 
 void printDocument(FILE *fileStream, struct document *doc)
 {
-
     printf("\n %s \n", doc->header);
     fpos_t pos = doc->startPos;
 
