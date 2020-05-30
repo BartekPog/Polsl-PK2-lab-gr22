@@ -1,0 +1,14 @@
+ASCII_code,Character,Number_of_occurences,Min_self_distance,Max_self_distance
+32,' ',4,16
+97,'a',,
+100,'d',,
+101,'e',21,21
+105,'i',13,13
+108,'l',14,14
+109,'m',6,19
+111,'o',2,14
+112,'p',,
+114,'r',14,14
+115,'s',10,10
+116,'t',5,5
+117,'u',,

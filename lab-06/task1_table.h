@@ -6,13 +6,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
 
-#define SIZE sizeof(unsigned char) * 8
+#define MIN(a, b) (a < b ? a : b)
 
 struct indexList
 {
-    int index;                   ///< Index in the string
-    struct indexListElem *pNext; ///< Pointer to the next element
+    int index;               ///< Index in the string
+    struct indexList *pNext; ///< Pointer to the next element
 };
 
 /**
@@ -52,7 +53,7 @@ void addOccurence(struct indexList **table, char c, int index);
  * @param table pointer to the table first elem
  * @param str string to save
  */
-void addMultipleOccurences(struct indexList **table, char *str);
+void saveStringToTable(struct indexList **table, char *str);
 
 /**
  * @brief Get the Number Of Occurences of a character
@@ -80,5 +81,11 @@ int getMinDistance(struct indexList **table, char c);
  * @return int maximal distance
  */
 int getMaxDistance(struct indexList **table, char c);
+
+/**
+ * @brief Frees the memory of table
+ * 
+ */
+void freeIndexesTable(struct indexList **table);
 
 #endif

@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
+#include <limits.h>
 
 #include "task1_table.h"
 
@@ -40,13 +41,37 @@ int main(int argc, char *argv[])
         return 0;
     }
 
+    struct indexList **table = initIndexListTable();
+    saveStringToTable(table, argv[1]);
+
+    fprintf(outFile, "ASCII_code,Character,Number_of_occurences,Min_self_distance,Max_self_distance\n");
+
+    for (int i = 0; i < UCHAR_MAX; i++)
+    {
+        char character = decode(i);
+
+        int occurences = getNumberOfOccurences(table, character);
+        if (occurences < 1)
+            continue;
+
+        fprintf(outFile, "%d,'%c',", i, character);
+
+        if (occurences > 1)
+            fprintf(outFile, "%d,%d\n", getMinDistance(table, character), getMaxDistance(table, character));
+
+        else
+            fprintf(outFile, ",\n");
+    }
+
     free(outFileName);
+    freeIndexesTable(table);
     fclose(outFile);
     return 0;
 }
 
 void test()
 {
+    setbuf(stdout, NULL);
     for (int c = -128; c < 128; c++)
         assert((char)c == decode((unsigned char)encode((char)c)));
 }

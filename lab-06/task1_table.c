@@ -12,57 +12,94 @@ char decode(unsigned char c)
 
 struct indexList **initIndexListTable()
 {
-    struct indexList **table = malloc(sizeof(struct indexList *) * SIZE);
-
-    for (int i = 0; i < SIZE; i++)
-        table[i] = NULL;
-
-    return 0;
+    struct indexList **table = calloc(UCHAR_MAX + 1, sizeof(struct indexList *));
+    return table;
 }
 
-/**
- * @brief Saves index of character in index list table
- * 
- * @param table pointer to the table first elem
- * @param c character to save
- * @param index index in file
- */
 void addOccurence(struct indexList **table, char c, int index)
 {
-    // int
+    struct indexList *newElem = malloc(sizeof(struct indexList));
+
+    newElem->index = index;
+
+    newElem->pNext = table[encode(c)];
+    table[encode(c)] = newElem;
 }
 
-/**
- * @brief Save string stats to table
- * 
- * @param table pointer to the table first elem
- * @param str string to save
- */
-void addMultipleOccurences(struct indexList **table, char *str);
+void saveStringToTable(struct indexList **table, char *str)
+{
+    for (int i = 0; i < strlen(str); i++)
+        addOccurence(table, str[i], i);
+}
 
-/**
- * @brief Get the Number Of Occurences of a character
- * 
- * @param table pointer to the table first elem
- * @param c character to count occurences of
- * @return int number of occurences
- */
-int getNumberOfOccurences(struct indexList **table, char c);
+int getNumberOfOccurences(struct indexList **table, char c)
+{
+    struct indexList *head = table[encode(c)];
 
-/**
- * @brief Get the minimal distance between characters
- * 
- * @param table pointer to the table first elem
- * @param c character to count occurences of
- * @return int minimal distance
- */
-int getMinDistance(struct indexList **table, char c);
+    int occurences = 0;
 
-/**
- * @brief Get the maximal distance between characters
- * 
- * @param table pointer to the table first elem
- * @param c character to count occurences of
- * @return int maximal distance
- */
-int getMaxDistance(struct indexList **table, char c);
+    while (head)
+    {
+        occurences++;
+        head = head->pNext;
+    }
+    return occurences;
+}
+
+int getMinDistance(struct indexList **table, char c)
+{
+    struct indexList *head = table[encode(c)];
+
+    if ((!head) || (!(head->pNext)))
+        return -1;
+
+    int first = head->index;
+
+    head = head->pNext;
+    int second = head->index;
+
+    int min = abs(first - second);
+
+    head = head->pNext;
+    while (head)
+    {
+        first = second;
+        second = head->index;
+        min = MIN(min, abs(first - second));
+        head = head->pNext;
+    }
+    return min;
+}
+
+int getMaxDistance(struct indexList **table, char c)
+{
+    struct indexList *head = table[encode(c)];
+
+    if ((!head) || (!(head->pNext)))
+        return -1;
+
+    int first = head->index;
+
+    while (head->pNext)
+        head = head->pNext;
+
+    return abs(first - head->index);
+}
+
+void freeIndexesTable(struct indexList **table)
+{
+    struct indexList *pRunner, *pSub;
+
+    for (int i = 0; i < UCHAR_MAX; i++)
+    {
+        pRunner = table[i];
+
+        while (pRunner)
+        {
+            pSub = pRunner->pNext;
+            free(pRunner);
+            pRunner = pSub;
+        }
+    }
+    free(table);
+}
