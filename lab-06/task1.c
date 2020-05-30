@@ -8,7 +8,7 @@
 
 #define DEFAULT_OUT_FILE "task1_out.csv"
 
-#define DEBUG 1
+#define DEBUG 0
 
 void test();
 
@@ -32,6 +32,7 @@ int main(int argc, char *argv[])
     else
         outFileName = strdup(DEFAULT_OUT_FILE);
 
+    printf("Opening file\n");
     FILE *outFile = fopen(outFileName, "w");
 
     if (!outFile)
@@ -41,11 +42,15 @@ int main(int argc, char *argv[])
         return 0;
     }
 
+    printf("Initiating structure\n");
     struct indexList **table = initIndexListTable();
+
+    printf("Transforming input string\n");
     saveStringToTable(table, argv[1]);
 
     fprintf(outFile, "ASCII_code,Character,Number_of_occurences,Min_self_distance,Max_self_distance\n");
 
+    printf("Saving to the %s file\n", outFileName);
     for (int i = 0; i < UCHAR_MAX; i++)
     {
         char character = decode(i);
@@ -54,7 +59,7 @@ int main(int argc, char *argv[])
         if (occurences < 1)
             continue;
 
-        fprintf(outFile, "%d,'%c',", i, character);
+        fprintf(outFile, "%d,'%c',%d,", i, character, occurences);
 
         if (occurences > 1)
             fprintf(outFile, "%d,%d\n", getMinDistance(table, character), getMaxDistance(table, character));
@@ -63,9 +68,12 @@ int main(int argc, char *argv[])
             fprintf(outFile, ",\n");
     }
 
+    printf("Freeing memory\n");
     free(outFileName);
     freeIndexesTable(table);
     fclose(outFile);
+    printf("Done\n");
+
     return 0;
 }
 
