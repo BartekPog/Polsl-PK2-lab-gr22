@@ -1,6 +1,0 @@
-{
-    "python.pythonPath": ".env/bin/python3.6",
-    "files.associations": {
-        "cstdio": "cpp"
-    }
-}

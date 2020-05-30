@@ -12,7 +12,7 @@
 #define OUTPUT_FILE_NAME "states_record.csv"
 
 #define MANIPULATION_SPEED 0.01
-#define TICK_DURATION_MS 40
+#define TICK_DURATION_MS 200
 
 #define EXIT_KEY 'q'
 
